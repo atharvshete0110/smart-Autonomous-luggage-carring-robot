@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Smart Autonomous Luggage Carrier – Object Detection Demo</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Link to the stylesheet -->
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+      <h1>Object Detection for Luggage Carrier</h1>
+      <p id="instructions">
+        Wait for the model to load before using the webcam. Use the controls below to enable features.
+      </p>
+      <button id="toggleDarkMode" title="Toggle dark/light theme">Toggle Dark/Light Mode</button>
+    </header>
+
+    <section id="controls">
+      <button id="webcamButton" title="Click to enable webcam">Enable Webcam</button>
+      <button id="toggleDetection" title="Toggle object detection on/off">Enable Detection</button>
+      <button id="snapshotButton" title="Take a snapshot">Take Snapshot</button>
+      <button id="recordButton" title="Start recording video">Start Recording</button>
+      <button id="stopRecordButton" title="Stop recording" disabled>Stop Recording</button>
+      <select id="modelSelector" title="Select a detection model">
+        <option value="coco-ssd">COCO-SSD</option>
+        <!-- Future models can be enabled when available -->
+        <option value="mobileNet" disabled>MobileNet (Coming Soon)</option>
+      </select>
+    </section>
+
+    <main>
+      <div id="videoContainer">
+        <video id="webcam" autoplay playsinline width="640" height="480"></video>
+        <canvas id="overlay" width="640" height="480"></canvas>
+      </div>
+
+      <section id="metrics">
+        <p>Frame Rate: <span id="frameRate">0</span> FPS</p>
+        <p>Detections: <span id="detectionCount">0</span></p>
+      </section>
+
+      <!-- Section to display bounding box coordinates and detection details -->
+      <section id="detectionDetails">
+        <h2>Detection Details</h2>
+        <ul id="bboxList"></ul>
+      </section>
+
+      <section id="snapshotArea">
+        <h2>Snapshot</h2>
+        <canvas id="snapshotCanvas" width="640" height="480"></canvas>
+        <br>
+        <a id="downloadLink" download="snapshot.png">Download Snapshot</a>
+      </section>
+    </main>
+
+    <!-- Audio Alert (ensure alert.mp3 exists in your project or update the src) -->
+    <audio id="alertSound">
+      <source src="alert.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+
+    <footer>
+      <p>Powered by Your Team</p>
+    </footer>
+
+    <!-- TensorFlow.js and the COCO-SSD model -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+    <!-- External JavaScript file -->
+    <script src="script.js" defer></script>
+  </body>
+</html>

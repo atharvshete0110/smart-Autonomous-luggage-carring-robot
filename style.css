@@ -1,0 +1,87 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #000;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Dark mode styles */
+  .dark-mode {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  header,
+  footer {
+    padding: 1rem;
+    text-align: center;
+    background-color: #444;
+    color: #fff;
+  }
+  
+  #controls {
+    text-align: center;
+    margin: 1rem;
+  }
+  
+  #controls button,
+  #controls select {
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+  }
+  
+  /* Video Container */
+  #videoContainer {
+    position: relative;
+    margin: auto;
+    width: 640px;
+    height: 480px;
+    border: 2px solid #ccc;
+  }
+  
+  /* Place the video and canvas on top of each other */
+  #webcam,
+  #overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  /* Metrics and Snapshot area */
+  #metrics,
+  #snapshotArea {
+    text-align: center;
+    margin: 1rem;
+  }
+  
+  /* Detection Details Box */
+  #detectionDetails {
+    margin: 20px auto;
+    background-color: #111;
+    color: #0f0;
+    padding: 10px;
+    border-radius: 8px;
+    width: fit-content;
+    font-family: monospace;
+    text-align: left;
+  }
+  
+  #bboxList {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  /* Responsive adjustments */
+  @media screen and (max-width: 700px) {
+    #videoContainer,
+    #webcam,
+    #overlay,
+    #snapshotCanvas {
+      width: 100%;
+      height: auto;
+    }
+  }
+  
