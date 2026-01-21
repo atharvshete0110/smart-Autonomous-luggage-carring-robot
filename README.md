@@ -110,4 +110,4 @@ If you like this project, please ⭐ the repo and share feedback!
 
 ## Robot File Flowchart
 
-![File](./assembly bot.jpg)
+![File](/assembly bot.jpg)
